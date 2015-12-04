@@ -1,6 +1,5 @@
 package com.java.io.decorator;
 
-import java.io.CharConversionException;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
