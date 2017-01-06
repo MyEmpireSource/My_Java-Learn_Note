@@ -2,6 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src.main.iolearn"/>
 	<classpathentry kind="src" path="src.main.util"/>
+	<classpathentry kind="src" path="src.main.exception"/>
+	<classpathentry kind="src" path="src.main.thread"/>
+	<classpathentry kind="src" path="src.mian.inner.class"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
