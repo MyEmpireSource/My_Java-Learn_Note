@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	log4j规定了默认的几个级别
+	trace < debug < info < warn < error <fatal　　　　
+	级别之间是包含的关系，意思是如果你设置日志级别是trace，则大于等于这个级别的日志都会输出 
+ -->
+<!-- status="OFF", 它的含义为是否记录log4j2本身的event信息, 默认是OFF, 可以去掉 -->
+<!-- monitorInterval="30" 定时检查配置文件是否变化(30秒检查一次)并根据变化重新加载 -->
+<configuration status="DEBUG" monitorInterval="30"> 
+
+	<!-- 定义下面的引用名 -->
+	<Properties>
+		<property name="OUTPUT_LOG_LEVEL">trace</property> <!-- 日志输出级别 -->
+	</Properties>
+	
+	<appenders>  
+		<!-- 这个下面定义的是各个appender，就是输出了 -->
+		
+		<!-- 控制台的输出配置 -->
+		<Console name="Console" target="SYSTEM_OUT">  
+			<!-- 
+				过滤器也将返回三类状态：ACCEPT(接受), DENY(拒绝) 或NEUTRAL(中立)
+					ACCEPT 意味着不用再调用其他过滤器了, 这个LogEvent将被执行; 
+					DENY 意味着马上忽略这个event, 并将此event的控制权交还给过滤器的调用者; 
+					NEUTRAL 则意味着这个event应该传递给别的过滤器, 如果再没有别的过滤器可以传递了, 那么就由现在这个过滤器来处理
+			
+				<ThresholdFilter>定义一个过滤器，每个appender可以定义很多个filter
+				onMatch="ACCEPT" onMismatch="DENY" 的意思是匹配就接受，否则直接拒绝
+				根据值得不同还有其它选择, 比如交给其它的过滤器去处理了之类
+				
+				如果有多个ThresholdFilter, 那么Filters是必须的
+				同时在Filters中, 首先要过滤不符合的日志级别, 把不需要的首先DENY掉, 然后再ACCEPT需要的日志级别, 这个次序不能搞颠倒
+				
+				下面的配置控制台只输出 level 及以上级别的信息(onMatch)，其他的直接拒绝(onMismatch)
+			-->
+			<ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY" />
+			<!-- 输出日志的格式 -->
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>  
+		</Console>  
+		
+		
+	</appenders>  
+
+	<!-- 定义logger, 只有定义了logger并引入的appender, appender才会生效 -->
+	<loggers>  
+		
+		<!-- 
+			定义许多个logger, 这些logger通过name进行区分. 
+			对不同的logger配置不同的输出, 方法是通过引用上面定义的logger. 
+			注意, <appender-ref> 的 ref 属性引用的值是上面每个 appender 的 name, 而不是节点名称 
+		-->
+		<root level="${OUTPUT_LOG_LEVEL}">  
+			<!-- 
+				<root> 没有name属性, 这个root相当于根节点. 
+				你所有的logger都适用与这个logger, 所以如果没有单独配置, 它们都继承了root的log配置 
+			-->
+			
+			<!-- 输出设置 -->  
+			<appender-ref ref="Console"/>  
+		</root> 
+		
+		<logger name="com.learn" level="${OUTPUT_LOG_LEVEL}" additivity="false">  
+			<appender-ref ref="Console" />  
+		</logger> 
+		
+		<logger name="com.base" level="${OUTPUT_LOG_LEVEL}" additivity="false">  
+			<appender-ref ref="Console" />   
+		</logger>
+		
+	</loggers> 
+</configuration>

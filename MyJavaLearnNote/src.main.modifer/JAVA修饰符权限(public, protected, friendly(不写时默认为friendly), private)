@@ -1,0 +1,13 @@
+作用域		 当前类		同一package		子孙类		其他package 
+
+public		   √		    √			  √              √ 
+
+protected	   √		    √             √              × 
+
+friendly	   √            √			  ×              × 
+
+private		   √            ×			  ×              × 
+
+不写时默认为friendly, 也即是“包访问权限”
+
+public > protected > friendly(no modifer) > private

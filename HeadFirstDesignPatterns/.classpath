@@ -6,6 +6,9 @@
 	<classpathentry kind="src" path="chap04.pattern.factory"/>
 	<classpathentry kind="src" path="chap05.pattern.singleton"/>
 	<classpathentry kind="src" path="chap06.pattern.command"/>
+	<classpathentry kind="src" path="chap07.pattern.adapter&amp;facade"/>
+	<classpathentry kind="src" path="chap08.pattern.template_method"/>
+	<classpathentry kind="src" path="chap09.pattern.iterator&amp;composite"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -5,6 +5,13 @@
 	<classpathentry kind="src" path="src.main.exception"/>
 	<classpathentry kind="src" path="src.main.thread"/>
 	<classpathentry kind="src" path="src.mian.inner.class"/>
+	<classpathentry kind="src" path="src.main.modifer"/>
+	<classpathentry kind="src" path="src.main.token"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JJWT_FOR_TOKEN"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JackJson_FOR_TOKEN_2.8.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Json_Lib_2.3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Log4j_2.3"/>
+	<classpathentry kind="lib" path="D:/Develop_Sources/JavaLib/Apache/commons-codec-1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

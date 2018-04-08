@@ -1,10 +1,7 @@
 package com.io.recordioflow;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.Writer;
 
 public class FlowOutputStream extends OutputStream {
 

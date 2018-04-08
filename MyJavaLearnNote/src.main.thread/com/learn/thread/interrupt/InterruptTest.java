@@ -1,8 +1,5 @@
 package com.learn.thread.interrupt;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 
  * @Package: com.learn.thread.interrupt
